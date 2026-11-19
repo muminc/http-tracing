@@ -1,0 +1,4 @@
+{
+  "/hello": { "target": "http://localhost:8080", "secure": false },
+  "/error-endpoint": { "target": "http://localhost:8080", "secure": false }
+}

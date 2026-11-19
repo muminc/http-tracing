@@ -1,0 +1,11 @@
+# IDE
+.idea/
+.vscode/
+*.iml
+
+# Maven
+spring-boot/target/
+
+# OS
+.DS_Store
+Thumbs.db

@@ -1,0 +1,10 @@
+.page {
+  max-width: 560px;
+  margin: 12vh auto 0;
+  padding: 0 16px;
+  text-align: center;
+}
+h1 { margin-bottom: 8px; }
+.sub { color: #555; margin-bottom: 32px; }
+.actions { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+.danger { --mat-button-outlined-label-text-color: #b3261e; }
