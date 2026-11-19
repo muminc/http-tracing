@@ -36,9 +36,9 @@ export class App {
       });
   }
 
-  /** Reads the trace-id out of the W3C `traceresponse` header: 00-<trace-id>-<span-id>-<flags>. */
+  /** Reads the trace id the server returns in the `X-Trace-Id` response header. */
   private traceIdFrom(headers: HttpHeaders): string | undefined {
-    return headers.get('traceresponse')?.split('-')[1];
+    return headers.get('X-Trace-Id') ?? undefined;
   }
 
   private open(data: ResultDialogData): void {

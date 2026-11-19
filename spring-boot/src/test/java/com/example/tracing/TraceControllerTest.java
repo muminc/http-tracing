@@ -31,8 +31,7 @@ class TraceControllerTest {
         client.get().uri("/hello").header("traceparent", TRACEPARENT)
                 .exchange()
                 .expectStatus().isOk()
-                .expectHeader().value("traceresponse",
-                        v -> assertThat(v).startsWith("00-" + TRACE_ID + "-").endsWith("-01"))
+                .expectHeader().valueEquals("X-Trace-Id", TRACE_ID)
                 .expectBody(String.class).isEqualTo("hello");
         assertLogged(output, "/hello -> returning 200");
     }
@@ -42,8 +41,7 @@ class TraceControllerTest {
         client.get().uri("/error-endpoint").header("traceparent", TRACEPARENT)
                 .exchange()
                 .expectStatus().isEqualTo(500)
-                .expectHeader().value("traceresponse",
-                        v -> assertThat(v).startsWith("00-" + TRACE_ID + "-"));
+                .expectHeader().valueEquals("X-Trace-Id", TRACE_ID);
         assertLogged(output, "/error-endpoint -> returning 500");
     }
 

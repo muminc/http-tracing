@@ -1,6 +1,6 @@
 <main class="page">
   <h1>HTTP Tracing Tester</h1>
-  <p class="sub">Each call sends a new W3C <code>traceparent</code> to the Spring Boot app.</p>
+  <p class="sub">No <code>traceparent</code> is sent: the Spring Boot app starts a new trace and returns its id in the <code>X-Trace-Id</code> header.</p>
   <div class="actions">
     <button matButton="filled" (click)="callHello()" [disabled]="busy()">Call Hello</button>
     <button matButton="outlined" class="danger" (click)="callError()" [disabled]="busy()">Call Error</button>
